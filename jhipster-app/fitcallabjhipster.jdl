@@ -1,0 +1,52 @@
+entity Schedule {
+  dayOfWeek DayOfWeek required
+  month Month required
+  day Integer required min(1) max(31)
+  startTime String required maxlength(8)
+  duration Integer required min(1) max(120)
+  activity String required maxlength(100)
+}
+entity Workout {
+  type String required maxlength(20)
+  minutes Integer required min(1) max(120)
+}
+entity Suggestion {
+  dayOfWeek DayOfWeek required
+  month Month required
+  day Integer required min(1) max(31)
+  startTime String required maxlength(8)
+  suggestion String required maxlength(200)
+}
+
+enum DayOfWeek {
+  Mon,
+  Tue,
+  Wed,
+  Thur,
+  Fri,
+  Sat,
+  Sun
+}
+
+enum Month {
+  Jan,
+  Feb,
+  Mar,
+  Apr,
+  May,
+  Jun,
+  Jul,
+  Aug,
+  Sep,
+  Oct,
+  Nov,
+  Dec
+}
+
+relationship ManyToOne {
+  Schedule{user(login)} to User
+  Workout{user(login)} to User
+  Suggestion{user(login)} to User
+}
+
+paginate Schedule, Workout, Suggestion with infinite-scroll

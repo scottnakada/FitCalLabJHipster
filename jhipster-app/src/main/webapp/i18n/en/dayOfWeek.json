@@ -1,0 +1,14 @@
+{
+  "fitcallabApp": {
+    "DayOfWeek": {
+      "null": "",
+      "Mon": "Mon",
+      "Tue": "Tue",
+      "Wed": "Wed",
+      "Thur": "Thur",
+      "Fri": "Fri",
+      "Sat": "Sat",
+      "Sun": "Sun"
+    }
+  }
+}

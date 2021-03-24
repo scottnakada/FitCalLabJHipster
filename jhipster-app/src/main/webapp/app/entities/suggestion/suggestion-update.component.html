@@ -1,0 +1,133 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-suggestion-heading" jhiTranslate="fitcallabApp.suggestion.home.createOrEditLabel">Create or edit a Suggestion</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fitcallabApp.suggestion.dayOfWeek" for="field_dayOfWeek">Day Of Week</label>
+                    <select class="form-control" name="dayOfWeek" formControlName="dayOfWeek" id="field_dayOfWeek">
+                        <option value="Mon">{{ 'fitcallabApp.DayOfWeek.Mon' | translate }}</option>
+                        <option value="Tue">{{ 'fitcallabApp.DayOfWeek.Tue' | translate }}</option>
+                        <option value="Wed">{{ 'fitcallabApp.DayOfWeek.Wed' | translate }}</option>
+                        <option value="Thur">{{ 'fitcallabApp.DayOfWeek.Thur' | translate }}</option>
+                        <option value="Fri">{{ 'fitcallabApp.DayOfWeek.Fri' | translate }}</option>
+                        <option value="Sat">{{ 'fitcallabApp.DayOfWeek.Sat' | translate }}</option>
+                        <option value="Sun">{{ 'fitcallabApp.DayOfWeek.Sun' | translate }}</option>
+                    </select>
+                    <div *ngIf="editForm.get('dayOfWeek')!.invalid && (editForm.get('dayOfWeek')!.dirty || editForm.get('dayOfWeek')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('dayOfWeek')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fitcallabApp.suggestion.month" for="field_month">Month</label>
+                    <select class="form-control" name="month" formControlName="month" id="field_month">
+                        <option value="Jan">{{ 'fitcallabApp.Month.Jan' | translate }}</option>
+                        <option value="Feb">{{ 'fitcallabApp.Month.Feb' | translate }}</option>
+                        <option value="Mar">{{ 'fitcallabApp.Month.Mar' | translate }}</option>
+                        <option value="Apr">{{ 'fitcallabApp.Month.Apr' | translate }}</option>
+                        <option value="May">{{ 'fitcallabApp.Month.May' | translate }}</option>
+                        <option value="Jun">{{ 'fitcallabApp.Month.Jun' | translate }}</option>
+                        <option value="Jul">{{ 'fitcallabApp.Month.Jul' | translate }}</option>
+                        <option value="Aug">{{ 'fitcallabApp.Month.Aug' | translate }}</option>
+                        <option value="Sep">{{ 'fitcallabApp.Month.Sep' | translate }}</option>
+                        <option value="Oct">{{ 'fitcallabApp.Month.Oct' | translate }}</option>
+                        <option value="Nov">{{ 'fitcallabApp.Month.Nov' | translate }}</option>
+                        <option value="Dec">{{ 'fitcallabApp.Month.Dec' | translate }}</option>
+                    </select>
+                    <div *ngIf="editForm.get('month')!.invalid && (editForm.get('month')!.dirty || editForm.get('month')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('month')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fitcallabApp.suggestion.day" for="field_day">Day</label>
+                    <input type="number" class="form-control" name="day" id="field_day"
+                           formControlName="day"/>
+                    <div *ngIf="editForm.get('day')!.invalid && (editForm.get('day')!.dirty || editForm.get('day')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('day')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('day')?.errors?.min" jhiTranslate="entity.validation.min" [translateValues]="{ min: 1 }">
+                            This field should be at least 1.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('day')?.errors?.max" jhiTranslate="entity.validation.max" [translateValues]="{ max: 31 }">
+                            This field cannot be more than 31.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('day')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fitcallabApp.suggestion.startTime" for="field_startTime">Start Time</label>
+                    <input type="text" class="form-control" name="startTime" id="field_startTime"
+                           formControlName="startTime"/>
+                    <div *ngIf="editForm.get('startTime')!.invalid && (editForm.get('startTime')!.dirty || editForm.get('startTime')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('startTime')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('startTime')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 8 }">
+                        This field cannot be longer than 8 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fitcallabApp.suggestion.suggestion" for="field_suggestion">Suggestion</label>
+                    <input type="text" class="form-control" name="suggestion" id="field_suggestion"
+                           formControlName="suggestion"/>
+                    <div *ngIf="editForm.get('suggestion')!.invalid && (editForm.get('suggestion')!.dirty || editForm.get('suggestion')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('suggestion')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('suggestion')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 200 }">
+                        This field cannot be longer than 200 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fitcallabApp.suggestion.user" for="field_user">User</label>
+                    <select class="form-control" id="field_user" name="user" formControlName="user">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id === editForm.get('user')!.value?.id ? editForm.get('user')!.value : userOption" *ngFor="let userOption of users; trackBy: trackById">{{ userOption.login }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+{
+  "fitcallabApp": {
+    "workout": {
+      "home": {
+        "title": "Workouts",
+        "createLabel": "Crear nuevo Workout",
+        "createOrEditLabel": "Crear o editar Workout",
+        "notFound": "Ningún Workouts encontrado"
+      },
+      "created": "Un nuevo Workout ha sido creado con el identificador {{ param }}",
+      "updated": "Un Workout ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Workout ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Workout {{ id }}?"
+      },
+      "detail": {
+        "title": "Workout"
+      },
+      "type": "Type",
+      "minutes": "Minutes",
+      "user": "User"
+    }
+  }
+}

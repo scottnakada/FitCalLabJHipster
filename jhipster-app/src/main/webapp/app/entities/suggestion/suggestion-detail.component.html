@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="suggestion">
+            <h2><span jhiTranslate="fitcallabApp.suggestion.detail.title">Suggestion</span> {{ suggestion.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fitcallabApp.suggestion.dayOfWeek">Day Of Week</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'fitcallabApp.DayOfWeek.' + suggestion.dayOfWeek }}">{{ suggestion.dayOfWeek }}</span>
+                </dd>
+                <dt><span jhiTranslate="fitcallabApp.suggestion.month">Month</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'fitcallabApp.Month.' + suggestion.month }}">{{ suggestion.month }}</span>
+                </dd>
+                <dt><span jhiTranslate="fitcallabApp.suggestion.day">Day</span></dt>
+                <dd>
+                    <span>{{ suggestion.day }}</span>
+                </dd>
+                <dt><span jhiTranslate="fitcallabApp.suggestion.startTime">Start Time</span></dt>
+                <dd>
+                    <span>{{ suggestion.startTime }}</span>
+                </dd>
+                <dt><span jhiTranslate="fitcallabApp.suggestion.suggestion">Suggestion</span></dt>
+                <dd>
+                    <span>{{ suggestion.suggestion }}</span>
+                </dd>
+                <dt><span jhiTranslate="fitcallabApp.suggestion.user">User</span></dt>
+                <dd>
+                    {{ suggestion.user?.login }}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/suggestion', suggestion.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

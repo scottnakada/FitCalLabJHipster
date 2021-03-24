@@ -1,0 +1,70 @@
+{
+  "name": "Suggestion",
+  "fields": [
+    {
+      "fieldName": "dayOfWeek",
+      "fieldType": "DayOfWeek",
+      "fieldValues": "Mon,Tue,Wed,Thur,Fri,Sat,Sun",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "month",
+      "fieldType": "Month",
+      "fieldValues": "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "day",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required",
+        "min",
+        "max"
+      ],
+      "fieldValidateRulesMin": "1",
+      "fieldValidateRulesMax": "31"
+    },
+    {
+      "fieldName": "startTime",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "8"
+    },
+    {
+      "fieldName": "suggestion",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "200"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "suggestion",
+      "relationshipName": "user",
+      "otherEntityField": "login"
+    }
+  ],
+  "changelogDate": "20210324041607",
+  "entityTableName": "suggestion",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

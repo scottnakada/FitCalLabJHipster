@@ -48,6 +48,9 @@ public class CacheConfiguration {
             createCache(cm, org.jhipster.fitcallab.domain.User.class.getName());
             createCache(cm, org.jhipster.fitcallab.domain.Authority.class.getName());
             createCache(cm, org.jhipster.fitcallab.domain.User.class.getName() + ".authorities");
+            createCache(cm, org.jhipster.fitcallab.domain.Schedule.class.getName());
+            createCache(cm, org.jhipster.fitcallab.domain.Workout.class.getName());
+            createCache(cm, org.jhipster.fitcallab.domain.Suggestion.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

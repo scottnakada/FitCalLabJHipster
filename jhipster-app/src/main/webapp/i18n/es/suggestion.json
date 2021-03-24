@@ -1,0 +1,27 @@
+{
+  "fitcallabApp": {
+    "suggestion": {
+      "home": {
+        "title": "Suggestions",
+        "createLabel": "Crear nuevo Suggestion",
+        "createOrEditLabel": "Crear o editar Suggestion",
+        "notFound": "Ningún Suggestions encontrado"
+      },
+      "created": "Un nuevo Suggestion ha sido creado con el identificador {{ param }}",
+      "updated": "Un Suggestion ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Suggestion ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Suggestion {{ id }}?"
+      },
+      "detail": {
+        "title": "Suggestion"
+      },
+      "dayOfWeek": "Day Of Week",
+      "month": "Month",
+      "day": "Day",
+      "startTime": "Start Time",
+      "suggestion": "Suggestion",
+      "user": "User"
+    }
+  }
+}

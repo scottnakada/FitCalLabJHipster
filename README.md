@@ -44,3 +44,16 @@ an ios app (using the ionic framework)
         # Start up the jhipster program
         ./gradlew
 
+### 0.2.0
+    Customize app for Fit Cal Lab
+    1) Create an entity relationship diagram using JHipster Design Language
+       to describe the database tables/columns, and their relationships
+       Use this web-page: https://start.jhipster.tech/jdl-studio/
+    2) Download the JDL fitcallabjhipster.jdl file from the web-site
+    3) Import the JDL file, and customize the JHipster app for Fit Cal Lab
+        jhipster import-jdl fitcallabjhipster.jdl
+    4) Disable faker, so it doesn't automatically generate test data
+        a) edit file src/main/resources/config/application-dev.yml
+        b) Change line 54, and remove faker
+    5) Start the web-program
+        ./gradlew
