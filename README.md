@@ -57,3 +57,22 @@ an ios app (using the ionic framework)
         b) Change line 54, and remove faker
     5) Start the web-program
         ./gradlew
+
+### 0.2.1
+    Customize app, and remove password hints
+    1) Edit src/main/webapp/app/account/register/register.component.html
+       Comment out alert div at bottom of page (contains admin password) (lines 152-155)
+    2) Edit src/main/webapp/app/home/home.component.html
+        a) Comment out hipster icon (line 3)
+        b) Change title and comment "this is home page" (change line 7, comment out 9)
+        c) Comment lines 17-20, username/password info
+        d) Comment lines 28-30, If you have a questions line
+        e) Comment lines 32-42, JHipster links
+    3) Edit src/main/webapp/app/layouts/footer/footer.component.html
+        a) Customize footer line
+    4) Edit src/main/webapp/i18n/en/global.json
+        a) line 142, change footer text
+    5) Edit src/main/webapp/i18n/en/home.json
+    `   a) line 3, change english version of Welcome title
+    6) Edit src/main/webapp/i18n/es/home.json
+        a) line 3, change spanish version of Welcome title
